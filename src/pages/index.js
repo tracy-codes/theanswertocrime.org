@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { addBackToTop } from "vanilla-back-to-top";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -34,6 +35,9 @@ import page29 from "../images/29.jpg";
 import cover from "../images/COVER.jpg";
 
 function IndexPage() {
+  useEffect(() => {
+    addBackToTop();
+  }, []);
   return (
     <Layout>
       <SEO
