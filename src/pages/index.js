@@ -41,11 +41,19 @@ function IndexPage() {
   return (
     <Layout>
       <SEO
-        keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
+        keywords={[
+          `The Answer To Crime`,
+          `answer to crime`,
+          `solve crime`,
+          `michael j. curls`,
+          `Michael J. Curls`,
+        ]}
         title="Home"
       />
-      <section className="text-center">
+      <section>
         <img src={cover} alt="" />
+      </section>
+      <section className="text-center" id="clemency-petition">
         <img src={page1} alt="" />
         <img src={page2} alt="" />
         <img src={page3} alt="" />
