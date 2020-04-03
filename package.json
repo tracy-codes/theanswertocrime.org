@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-tailwind",
-  "description": "Gatsby starter styled with Tailwind",
-  "version": "4.0.0",
-  "author": "Taylor Bryant <taylor@bryant.io>",
+  "name": "the-answer-to-crime",
+  "description": "The Answer To Crime WEbsite",
+  "version": "1.0.0",
+  "author": "Tracy Adams <tracy@simpl.solutions>",
   "dependencies": {
     "@tailwindcss/ui": "^0.1.3",
     "gatsby": "2.20.10",
