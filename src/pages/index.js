@@ -1,5 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { addBackToTop } from "vanilla-back-to-top";
+
+import Viewer, { Worker, defaultLayout } from "@phuocng/react-pdf-viewer";
+import "@phuocng/react-pdf-viewer/cjs/react-pdf-viewer.css";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -34,10 +37,75 @@ import page28 from "../images/28.jpg";
 import page29 from "../images/29.jpg";
 import cover from "../images/COVER.jpg";
 
+const renderToolbar = (toolbarSlot) => {
+  return (
+    <div
+      style={{
+        alignItems: "center",
+        display: "flex",
+        width: "100%",
+      }}
+    >
+      <div
+        style={{
+          alignItems: "center",
+          display: "flex",
+          flexGrow: 1,
+          flexShrink: 1,
+          justifyContent: "center",
+        }}
+      >
+        <div style={{ padding: "0 2px" }}>{toolbarSlot.previousPageButton}</div>
+        <div style={{ padding: "0 2px" }}>
+          {toolbarSlot.currentPage + 1} / {toolbarSlot.numPages}
+        </div>
+        <div style={{ padding: "0 2px" }}>{toolbarSlot.nextPageButton}</div>
+        <div style={{ padding: "0 2px" }}>{toolbarSlot.zoomOutButton}</div>
+        <div style={{ padding: "0 2px" }}>{toolbarSlot.zoomPopover}</div>
+        <div style={{ padding: "0 2px" }}>{toolbarSlot.zoomInButton}</div>
+        <div style={{ padding: "0 2px" }}>{toolbarSlot.fullScreenButton}</div>
+        <div
+          style={{ padding: "0 2px" }}
+          onClick={() =>
+            window.gtag("event", "click", {
+              event_category: "button_click",
+              event_label: "Download Book",
+              value: 1,
+            })
+          }
+        >
+          {toolbarSlot.downloadButton}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const pdfViewerLayout = (
+  isSidebarOpened,
+  container,
+  main,
+  toolbar,
+  sidebar
+) => {
+  return defaultLayout(
+    isSidebarOpened,
+    container,
+    main,
+    toolbar(renderToolbar),
+    sidebar
+  );
+};
+
+const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
+
 function IndexPage() {
   useEffect(() => {
     addBackToTop();
   }, []);
+
+  const myRef = useRef(null);
+  const executeScroll = () => scrollToRef(myRef);
   return (
     <Layout>
       <SEO
@@ -50,10 +118,28 @@ function IndexPage() {
         ]}
         title="Home"
       />
+      <div className="flex items-center justify-center my-6">
+        <span className="inline-flex rounded-md">
+          <button
+            type="button"
+            className="inline-flex items-center px-6 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150 shadow-md hover:shadow-xs"
+            onClick={executeScroll}
+          >
+            Clemency Petition
+          </button>
+        </span>
+      </div>
       <section>
         <img src={cover} alt="" />
+        <div className="my-4">
+          <Worker>
+            <div className="h-screen">
+              <Viewer fileUrl="/the-answer-full.pdf" layout={pdfViewerLayout} />
+            </div>
+          </Worker>
+        </div>
       </section>
-      <section className="text-center" id="clemency-petition">
+      <section className="text-center" id="clemency-petition" ref={myRef}>
         <img src={page1} alt="" />
         <img src={page2} alt="" />
         <img src={page3} alt="" />
