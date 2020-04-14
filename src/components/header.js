@@ -40,7 +40,7 @@ function Header() {
               title: `Download The Answer`,
             },
             {
-              route: `clemency-full.pdf`,
+              route: `clemency-petition.pdf`,
               title: `Download Clemency`,
             },
           ].map((link) => (
