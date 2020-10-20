@@ -102,7 +102,7 @@ function IndexPage() {
           <Worker>
             <div className="h-screen">
               <Viewer
-                fileUrl="/the-answer-full-09182020.pdf"
+                fileUrl="/the-answer-full-10202020.pdf"
                 layout={pdfViewerLayout}
                 defaultScale={0.6}
               />
