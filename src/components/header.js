@@ -52,12 +52,6 @@ function Header() {
               {link.title}
             </Link>
           ))}
-          <a
-            className="block md:inline-block text-center mt-4 md:mt-0 md:ml-6 no-underline text-white bg-gray-800 hover:bg-gray-700 transition-all duration-150 py-2 px-4 rounded-sm uppercase"
-            href="https://facebook.com/michael.curls.5"
-          >
-            Facebook
-          </a>
         </nav>
       </div>
     </header>
