@@ -5676,14 +5676,6 @@
   "resolved" "https://registry.npmjs.org/gatsby-plugin-eslint/-/gatsby-plugin-eslint-2.0.8.tgz"
   "version" "2.0.8"
 
-"gatsby-plugin-google-gtag@^2.0.0":
-  "integrity" "sha512-V1cFe3+FiXGEnI8aDzdj1e4HXjNNQeHSTKf9X7k/Ww39xD3E6je7qvfId7ZNnf1ququ1aeTQjDHQqqBgLzgxLQ=="
-  "resolved" "https://registry.npmjs.org/gatsby-plugin-google-gtag/-/gatsby-plugin-google-gtag-2.0.0.tgz"
-  "version" "2.0.0"
-  dependencies:
-    "@babel/runtime" "^7.8.7"
-    "minimatch" "^3.0.4"
-
 "gatsby-plugin-manifest@2.3.3":
   "integrity" "sha512-lEval/fZaCqu9qlQMY38A8fuoJOpWRih3Hh0sLfM2Bt1dPlVkjDQqpHbQCfEinQA41c6JUdFAQFhdp5+G0kOwQ=="
   "resolved" "https://registry.npmjs.org/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.3.3.tgz"
